@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>JavaScript Function</title>
+		<meta charset="UTF-8">
+		<script type="text/javascript">
+		    // the following uses object literal with arrays as values (villians 
+		    // 	for keys (hero)
+		    // and name to get array item instead fo index
+			var superData = {"Super Man":["Lex Luther"],
+							 "Bat Man":["Joker", "Riddler"],
+							 "Spider Man": ["Creen Goblin",
+							                "Vulture", "Carnage"],
+							 "Thor":["Loki", "Fros Giants"] }
+			function writeIt(){
+				document.write("<table>");
+				for(hero in superData){
+					var villians = superData[hero];  //array of villians
+					for (villianName in villians){   // get villians
+						var villian = villians[villianName]; // get particular villian
+						var listItem = makeListItem(hero, villian);
+						document.write(listItem);
+					}
+					
+				}
+				
+				document.write("</table>");
+			}
+			
+			function makeListItem(name, value){
+			 //	var itemStr = "<li>" + name  + ":"+ value + "</li>";
+				var itemStr = "<tr><td>" + name + ":</td><td>" + value +  "</td></tr>";
+				
+				return itemStr;
+				
+			}
+		</script>
+	</head>
+	<body onload = "writeIt()">
+	</body>
+</html>
