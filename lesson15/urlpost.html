@@ -1,0 +1,68 @@
+
+<html>
+<head>
+<meta charset="utf-8">
+<title>AJAX post request</title>
+</head>
+<body>
+	<h1>AJAX POST request</h1>
+	
+	<script>
+	   
+	
+		var url = "http://localhost:8080/SpringRestfulWebServicesCRUDExample/countries"
+		var jsonData = JSON.stringify({"id":"6", "countryName":"Frank", "population":8000});
+		
+		request = new ajaxRequest();  // call request constructor
+	
+		request.open("POST", url, true);
+		
+	
+		request.setRequestHeader("Content-type", "application/json");
+		
+		request.onreadystatechange=function() {
+			if(request.readyState==4){
+				
+			    if(request.status==200){
+				  document.write("Data is posted using POST to web service");// place to do updates
+				 
+			     }else {
+					document.write("status =  " + request.status);
+					document.write(" readyState = " + request.readyState);
+					
+				}	
+			  
+			}		
+			
+			
+		}
+	
+	    request.send(jsonData);
+		
+		function ajaxRequest() {
+			var request;
+			try {
+			  request = new XMLHttpRequest();  // Non IE Browser?
+			  document.write("here");
+			}catch(e1) {
+				try{  // IE 6+?
+					request = new ActiveXObject("Msxml2.XMLHTTP");
+				}catch(e2) {
+					try { // IE 5?
+						request = new ActiveXObject("Microsoft.XMLHTTP");
+					}catch(e3) { // There is no Ajax Support
+						request = false
+						document.write("ERR Frank-----");
+					}
+				}
+				
+			}
+			
+			
+			alert("I am here");
+			return request;
+			
+		}
+    </script>
+</body>
+</html>

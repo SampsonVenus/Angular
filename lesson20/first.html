@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!-- Associate directive (ng-app) to module name in javascript (i.e. first.js) -->
+<html ng-app="firstApp">  
+	<head>
+		<title>First Angularjs App </title>
+	</head>
+	<body>
+	   <!-- Associate directive(ng-controller) to add controller to html 
+	        element (<div>) that you want module to control 
+	        and bind data from the model to the web page or view 
+	        using ng-model directive 
+	   -->
+	  
+	    <div ng-controller="FirstController">
+	    	<span>Name:</span>
+	    	<input type="text" ng-model="first">
+	    	<input type="text" ng-model="last">
+	    	<button ng-click='updateMessage()'>Message</button>
+	    	<hr>
+	    	
+	    	<!--Expression inside html template -- great feature of Angularjs 
+	    	    output -> Message: Hello Some One!
+	    	-->
+	    	{{heading + message }}  
+	    </div>
+	
+	<!--     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.7/angular.min.js"></script>  -->
+	
+	    <script src="js/angular.min.js"></script>
+	    
+		<script src="js/first.js"></script>
+	</body>
+</html>
