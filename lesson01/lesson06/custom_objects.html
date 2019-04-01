@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Custom Objects</title>
+		<meta charset="UTF-8">
+		<script type="text/javascript">
+		    
+			function writeIt() {
+				var characters = new Array();  // create an array 
+				//populate array with Character object
+				characters.push(new Character("John 117", "Master Chief",
+						                     "Earth", "Spartan"));
+				characters.push(new Character("vadam", "The Arbitor",
+						                      "High Charity", "Elite"));
+				
+				characters.push(new Character("Gravemind", "", "Precursors",
+						                       "Flood"));	
+				
+				// Create stgJohnson array 
+				stgJohnson = new Character("Sgt Johnson", "", "", "");
+				stgJohnson.land = "Earth";
+				stgJohnson.race = "Human";
+				characters.push(stgJohnson);  // Add stgJohnson obj to characters array
+				
+				for (i = 0; i < characters.length; i++){
+					var character = characters[i];   // get character object
+					character.number = i + 1;        // add number to character object
+					document.write(character.number + ". "+
+							       character.getFullName() + " " +
+							       character.getDetail() + "<br>");
+				}
+			}	
+			
+			function Character(first, last, land, race){
+				this.first = first;
+				this.last = last;
+				this.race = race;
+				this.land = land;
+			}
+				
+			Character.prototype = {
+				getFullName: function(){
+					return this.first + " " + this.last; 
+				},
+				getDetail: function() {
+				   return "is a " + this.race + " from the " + this.land;
+				}
+				  
+			};
+				
+				
+		
+			
+		</script>
+	</head>
+	<body onload="writeIt()">
+	</body>
+</html>
