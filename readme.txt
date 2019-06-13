@@ -1,4 +1,4 @@
-Step to setup Node.js/express and execute a AngularJS
+Step to setup Node.js/express and execute a AngularJS   To see if update
 
 1. Create eclipse workspace (i.e. AngularJSJQ) for Angular, JavaScript, and JQuery
 2. Start eclipse(i.e. 2018-12) using the above workspace
@@ -28,4 +28,7 @@ Step to setup Node.js/express and execute a AngularJS
 16.  Go back to Eclipse and Refresh the source folder
 
 17.  In a web browser enter (http://localhost:7777/source/first.html)
+
+
+Test load from local machine
  
